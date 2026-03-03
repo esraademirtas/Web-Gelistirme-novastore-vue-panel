@@ -1,9 +1,9 @@
 // src/Interfaces/storage.js
-// Projemizin veritabanı simülasyonu: LocalStorage işlemleri
+// ProjemiN veritabanı simülasyonu: LocalStorage işlemleri
 
 const STORAGE_KEY = 'novastore_products';
 
-// Hocanın projeyi açtığında boş ekran görmemesi için hazırlanan başlangıç verileri (Seed Data)
+//Seed Data
 const initialProducts = [
   { id: 101, name: 'Geliştirici Laptop Pro', category: 'Elektronik', price: 45000, stock: 15 },
   { id: 102, name: 'Akıllı Telefon Ultra', category: 'Elektronik', price: 32000, stock: 40 },
@@ -38,7 +38,7 @@ export const getProducts = () => {
   if (data && JSON.parse(data).length > 0) {
     return JSON.parse(data);
   } else {
-    // Eğer Local Storage tamamen boşsa (Hoca siteye ilk defa giriyorsa)
+    // Eğer Local Storage tamamen boşsa
     // Örnek 20 ürünü yükle ve geri döndür.
     saveProducts(initialProducts);
     return initialProducts;
